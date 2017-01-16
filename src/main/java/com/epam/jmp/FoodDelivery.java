@@ -32,4 +32,12 @@ public class FoodDelivery {
     public List<Restaurant> findForType(Restaurant.Type type) {
         return restaurants.stream().filter(restaurant -> restaurant.getType().equals(type)).collect(Collectors.toList());
     }
+    
+	public List<Restaurant> getRestaurants() {
+		return restaurants;
+	}
+	
+	public Restaurant findById(int id) {
+		return restaurants.stream().filter(restaurant -> restaurant.getId() == id).findFirst().orElse(null);
+	}
 }

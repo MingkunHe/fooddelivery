@@ -1,0 +1,23 @@
+server:
+  port: 8761
+
+eureka:
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+
+# this paragraph for @EnableConfigServer
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: file:///D:/workspace/fooddelivery-config-repo
+#         uri: https://github.com/spring-cloud-samples/config-repo
+
+logging:
+  level:
+    com:
+      netflix:
+        eureka: OFF
+        discovery: OFF
